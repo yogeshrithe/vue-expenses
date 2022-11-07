@@ -1,0 +1,28 @@
+{
+  "items": [
+    {
+      "id": 1,
+      "category": "Shopping",
+      "amount": 234,
+      "date": "2019-01-23",
+      "type": "cash",
+      "description": "hello"
+    },
+    {
+      "category": "Shopping",
+      "date": "2022-09-30",
+      "type": "cash",
+      "amount": "675",
+      "description": "gfhgfgf",
+      "id": 2
+    },
+    {
+      "category": "Utilities",
+      "date": "2022-11-15",
+      "type": "cash",
+      "amount": "3456",
+      "description": "Utilities",
+      "id": 3
+    }
+  ]
+}
