@@ -4,6 +4,7 @@
     <v-app-bar app color="#385F73" dark>
       <v-app-bar-nav-icon
         @click.stop="$emit('drawerClick', (drawer = !drawer))"
+        v-if="$vuetify.breakpoint.smAndDown"
       ></v-app-bar-nav-icon>
       <v-spacer></v-spacer>
       <v-toolbar-title>Orbiter</v-toolbar-title>

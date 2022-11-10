@@ -4,6 +4,7 @@
     v-model="drawer"
     height="100%"
     width="250"
+    :permanent="$vuetify.breakpoint.mdAndUp"
     color="#385F73"
     left
   >

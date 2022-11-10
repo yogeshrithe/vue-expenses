@@ -10,7 +10,7 @@
         </v-list-item>
       </v-list>
       <v-row class="mt-3">
-        <v-col cols="10">
+        <v-col cols="8" lg="10">
           <v-text-field
             placeholder="search expense"
             v-model="expense"
@@ -18,12 +18,14 @@
             rounded
           ></v-text-field
         ></v-col>
-        <v-col>
+        <v-col cols="4" lg="2">
           <v-btn
             class="mt-2"
+            height="40"
             color="#385F73"
             @click="goToExpenseForm()"
             rounded
+            small
             outlined
             >ADD EXPENSE</v-btn
           ></v-col
@@ -87,22 +89,22 @@ export default {
   methods: {
     async getItem() {
       await axios
-        .get("http://localhost:3000/expense")
+        .get("https://mellow-assorted-chard.glitch.me/expense")
         .then((response) => (this.items = response.data));
     },
     async postItem(event) {
       await axios
-        .post("http://localhost:3000/expense", event)
+        .post("https://mellow-assorted-chard.glitch.me/expense", event)
         .then(() => this.getItem());
     },
     async editItem(event) {
       await axios
-        .put("http://localhost:3000/expense/" + event._id, event)
+        .put("https://mellow-assorted-chard.glitch.me/expense/" + event._id, event)
         .then(() => this.getItem());
     },
     async deleteItem(id) {
       await axios
-        .delete("http://localhost:3000/expense/" + id)
+        .delete("https://mellow-assorted-chard.glitch.me/expense/" + id)
         .then(() => this.getItem());
     },
     sendDataForEdit(item) {

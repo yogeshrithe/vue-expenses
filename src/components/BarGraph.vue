@@ -3,6 +3,7 @@
     <apexchart
       type="bar"
       height="430"
+      width="1070"
       :options="chartOptions"
       :series="series"
     ></apexchart>
@@ -13,48 +14,98 @@
 export default {
   data() {
     return {
-      series: [{
-          data: [44, 55, 41, 64, 22, 43, 21]
-        }, {
-          data: [53, 32, 33, 52, 13, 44, 32]
-        }],
+      series: [
+        {
+          name: "Inflation",
+          data: [350, 247, 288, 450, 467, 364, 489, 512, 241],
+        },
+      ],
       chartOptions: {
         chart: {
+          height: 250,
           type: "bar",
-          height: 430,
         },
         plotOptions: {
           bar: {
-            vertical: true,
+            borderRadius: 10,
             dataLabels: {
-              position: "top",
+              position: "top", // top, center, bottom
             },
           },
         },
         dataLabels: {
           enabled: true,
+          formatter: function (val) {
+            return val + "%";
+          },
+          offsetY: -20,
           style: {
-            fontSize: "12px",
-            colors: ["#fff"],
+            fontSize: "10px",
+            colors: ["#304758"],
           },
         },
-        stroke: {
-          show: true,
-          width: 1,
-          colors: ["#fff"],
-        },
-        tooltip: {
-          shared: true,
-          intersect: false,
-        },
+
         xaxis: {
-          categories: ["General Expenses", "Shopping", "Utilities", "Travel"],
+          categories: [
+            "Jan",
+            "Feb",
+            "Mar",
+            "Apr",
+            "May",
+            "Jun",
+            "Jul",
+            "Aug",
+            "Sep",
+          ],
+          position: "top",
+          axisBorder: {
+            show: false,
+          },
+          axisTicks: {
+            show: false,
+          },
+          crosshairs: {
+            fill: {
+              type: "gradient",
+              gradient: {
+                colorFrom: "#D8E3F0",
+                colorTo: "#BED1E6",
+                stops: [0, 100],
+                opacityFrom: 0.4,
+                opacityTo: 0.5,
+              },
+            },
+          },
+          tooltip: {
+            enabled: true,
+          },
+        },
+        yaxis: {
+          axisBorder: {
+            show: false,
+          },
+          axisTicks: {
+            show: false,
+          },
+          labels: {
+            show: false,
+            formatter: function (val) {
+              return val + "%";
+            },
+          },
+        },
+        title: {
+          text: "Monthty Leads in Year 2022",
+          floating: true,
+          align: "center",
+          style: {
+            color: "#444",
+          },
         },
       },
+
+      // },
     };
   },
 };
 </script>
-
-<style lang="scss" scoped>
-</style>
